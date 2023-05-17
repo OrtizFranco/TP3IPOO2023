@@ -7,7 +7,7 @@ class PasajeroEspecial extends Pasajero
  especiales para personas con alergias o restricciones alimentarias.*/
  private $cantServiciosRequeridos;
  private $arrayServicios;
- public function __construct($nombre,$numTicket,$numAsiento,$cantNecesidades){
+ public function __construct($nombre,$numTicket,$numAsiento,$cantNecesidades,$porcentaje){
     parent::__construct($nombre,$numAsiento,$numTicket);
     $this->cantNecesidades=$cantNecesidades;
  }

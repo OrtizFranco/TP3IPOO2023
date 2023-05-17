@@ -37,8 +37,7 @@ class Pasajero{
         $this->numTicket=$numTicket;
     }
     public function darPorcentajeIncremento(){
-        
-        return $porcentaje;
+        return $this->porcentaje;
     }
     public function getPorcentajeIncremento(){
         return $this->porcentaje;
