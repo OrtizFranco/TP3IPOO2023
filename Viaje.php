@@ -11,11 +11,28 @@ class Viaje{
     private $pasajeros;
     private $responsableViaje;
     private $costoPasaje;
+    private $sumaDeVentas;
+    public function setSumaDeVentas($venta){
+        $this-> sumaDeVentas+=$venta;
+    }
+    public function getSumaDeVentas(){
+        return $sumaDeVentas;
+    }
     public function venderPasaje($objPasajero){
-        if(count($this->getPasajeros()<$this->getCantPasajeros())){
-            $porcentaje=$objPasajero->get;
+        if($this->hayPasajesDisponibles()){
+            $porcentaje=$objPasajero->getPorcentajeIncremento();
             $costo=$this-> getCostoPasaje()+getCostoPasaje()*$porcentaje/100;
+            $this->setSumaDeVentas($costo);
+            $this->setPasajeros($objPasajero);
         }
+        return $costo;
+    }
+    public function hayPasajesDisponibles(){
+        $disp=FALSE;
+       if (count($this->getPasajeros())<$this->getCantPasajeros()){
+        $disp=true;
+       }
+       return $disp;
     }
     //metodo constructor, recibe datos desde el test
     public function __construct($codigo, $destino, $cant_Max_Pjs,$arrayPasajeros,$responsable,$costoPasaje){
