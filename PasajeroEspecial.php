@@ -7,7 +7,7 @@ class PasajeroEspecial extends Pasajero
  especiales para personas con alergias o restricciones alimentarias.*/
  private $cantServiciosRequeridos;
  private $arrayServicios;
- public function __construct($nombre,$numTicket,$numAsiento,$cantNecesidades,$porcentaje){
+ public function __construct($nombre,$numTicket,$numAsiento,$cantNecesidades){
     parent::__construct($nombre,$numAsiento,$numTicket);
     $this->cantNecesidades=$cantNecesidades;
  }
@@ -24,12 +24,12 @@ class PasajeroEspecial extends Pasajero
     $this->arrayServicios=$arrayServicios;
  }
  public function darPorcentajeIncremento(){
-    if ($this->cantServiciosRequeridos=1){
+    if ($this->getCantServiciosRequeridos()==1){
+   
         $porcentaje=15;
     }else{
         $porcentaje=30;
     }
-    $this->setPorcentajeIncremento($porcentaje);
     return $porcentaje;
  }
  public function cargarServicios(){

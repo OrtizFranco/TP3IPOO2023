@@ -5,16 +5,19 @@ class Pasajero{
     private $nombre;
     private $numAsiento;
     private $numTicket;
-    private $porcentaje;
+    
 
     public function __construct($nombre,$numAsiento,$numTicket){
         
         $this->nombre=$nombre;
         $this->numAsiento= $numAsiento;
-        $this-> numTicket = $numTicket;
-        $this->porcentaje=10;
+        $this-> numTicket = $numTicket;   
 
     }
+    public function darPorcentajeIncremento(){
+        $porcentaje=0;
+        return $porcentaje;
+     }
     //gets y sets
     public function getNombre(){
         return $this->nombre;
@@ -36,9 +39,7 @@ class Pasajero{
     public function setNumTicket($numTicket){
         $this->numTicket=$numTicket;
     }
-    public function darPorcentajeIncremento(){
-        return $this->porcentaje;
-    }
+    
     public function getPorcentajeIncremento(){
         return $this->porcentaje;
     }

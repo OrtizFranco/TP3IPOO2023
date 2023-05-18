@@ -12,12 +12,11 @@ class PasajeroVIP extends Pasajero{
      //gets y sets
      
      public function darPorcentajeIncremento(){
-        if ($this->millasDePasajero<300){
+        if ($this->getmillasDePasajero()<300){
             $porcentaje=30;
         }else{
             $porcentaje=35;
         }
-        $this->setPorcentajeIncremento($porcentaje);
         return $porcentaje;
      }
 
